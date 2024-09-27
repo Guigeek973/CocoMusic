@@ -1,0 +1,65 @@
+html,
+body {
+  padding: 0;
+  margin: 0 !important;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+  background-image: url('/images/background-paysage.jpg'); /* Ajoutez cette ligne */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  transition: background-image 0.5s ease-in-out;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// AUDIO PLAYER
+// ._previous_1mino_1, ._play_rfl62_1, ._next_147p5_1, ._pause_1talx_1 { 
+//   width: 20px;
+//   height: 20px;
+// }
+// ._wrapper_1er3w_1 { 
+//   min-height: auto;
+// }
+// ._wrapper_1ssds_1, ._wrapper_1sefb_1 {
+//   margin-bottom: 15px;
+// }
+// ._wrapper_l8wb1_1 {
+//   margin: 15px 0 15px;
+// }
+// ._time_ac0au_1, ._title_1ldbx_1 {
+//   font-size: 1rem;
+// }
+// ._wrapper_1sefb_1 {
+//   padding: 0 20px;
+// }
+// ._search_47p46_1 { 
+//   height: 30px;
+//   font-size: 1rem;
+//   margin: 0;
+// }

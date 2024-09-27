@@ -1,0 +1,242 @@
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  /* height: 100vh; */
+}
+
+.content {
+  flex: 1;
+}
+
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.activeBackground {
+  opacity: 1;
+  z-index: 1;
+}
+
+.inactiveBackground {
+  opacity: 0;
+  z-index: 0;
+}
+
+.title {}
+
+.iconColumn {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.whiteIcon {
+  width: 32px;
+  height: 32px;
+  color: white;
+  font-size: 24px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  pointer-events: auto;
+}
+
+.whiteIcon:hover {
+  transform: scale(1.2);
+}
+
+.pageContainer {
+  position: relative;
+  min-height: 100vh;
+}
+
+.section {
+  height: 100vh;
+  /* scroll-snap-align: start; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixedNavigation {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 3%;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+.fixedNavigation .socialIcons,
+.fixedNavigation .navIcons {
+  position: static;
+  pointer-events: auto;
+}
+
+.carouselContainer {
+  width: 100%;
+  max-width: 80vw;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carouselButtons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carouselButton {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.leftButton {
+  left: -50px;
+}
+
+.rightButton {
+  right: -50px;
+}
+
+.carouselButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Ajustez ces styles si nécessaire pour s'adapter à votre mise en page */
+
+.mySwiper {
+  width: 100%;
+  height: 70vh;
+  /* Adjust as needed */
+}
+
+.mySwiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiperNavButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.swiperNavButtons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.swiperNavButtons button:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for Swiper pagination */
+.mySwiper :global(.swiper-pagination-bullet) {
+  background-color: #007bff;
+}
+
+.mySwiper :global(.swiper-pagination-bullet-active) {
+  background-color: #0056b3;
+}
+
+/* Styles for navigation buttons */
+.mySwiper :global(.swiper-button-next),
+.mySwiper :global(.swiper-button-prev) {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+
+.audioPlayerSnackbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.closeButton:hover {
+  background-color: #cc0000;
+}
+
+/* Vous pouvez avoir besoin d'ajuster ces styles pour qu'ils s'intègrent bien avec le composant Player */
