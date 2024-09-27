@@ -24,11 +24,10 @@ const tracks = [
 export default function AudioPlayer({ onClose }) {
     return (
         <div className={styles.audioPlayerSnackbar}>
-            <button onClick={onClose}>Close</button>
             <Player
                 trackList={tracks}
                 includeTags={false}
-                includeSearch={true}
+                includeSearch={false}
                 showPlaylist={false}
                 sortTracks={false}
                 autoPlayNextTrack={true}

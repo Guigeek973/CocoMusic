@@ -11,7 +11,7 @@ const iconMap = {
     Contact: faEnvelope,
 };
 
-export default function NavIcons({ sections, activeSection, scrollToSection, togglePlayer, showPlayer }) {
+export default function NavIcons({ sections, activeSection, scrollToSection, showPlayer, togglePlayer }) {
     return (
         <div className={`${styles.iconColumn} ${styles.navIcons}`}>
             {sections.map(({ label, href }) => (

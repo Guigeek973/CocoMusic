@@ -10,6 +10,7 @@ import { useRef, useState, useEffect } from 'react';
 function MyApp({ Component, pageProps, router }) {
     const [activeSection, setActiveSection] = useState('Home');
     const [previousSection, setPreviousSection] = useState('Home');
+    const [showPlayer, setShowPlayer] = useState(false);
     const homeRef = useRef(null);
     const blogRef = useRef(null);
     const musicRef = useRef(null);
@@ -27,6 +28,10 @@ function MyApp({ Component, pageProps, router }) {
         if (section && section.ref.current) {
             section.ref.current.scrollIntoView({ behavior: 'smooth' });
         }
+    };
+
+    const togglePlayer = () => {
+        setShowPlayer(!showPlayer);
     };
 
     useEffect(() => {
@@ -55,7 +60,14 @@ function MyApp({ Component, pageProps, router }) {
     }, [sections, activeSection]);
 
     return (
-        <Layout sections={sections} fixedNavigation={true} activeSection={activeSection} scrollToSection={scrollToSection}>
+        <Layout 
+            sections={sections} 
+            fixedNavigation={true} 
+            activeSection={activeSection} 
+            scrollToSection={scrollToSection}
+            showPlayer={showPlayer}
+            togglePlayer={togglePlayer}
+        >
             <AnimatePresence mode="wait" initial={false}>
                 <Component
                     {...pageProps}
@@ -63,6 +75,8 @@ function MyApp({ Component, pageProps, router }) {
                     sections={sections}
                     activeSection={activeSection}
                     previousSection={previousSection}
+                    showPlayer={showPlayer}
+                    togglePlayer={togglePlayer}
                 />
             </AnimatePresence>
         </Layout>

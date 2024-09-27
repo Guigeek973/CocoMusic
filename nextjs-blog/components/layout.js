@@ -3,7 +3,7 @@ import SocialIcons from './social-icons';
 import NavIcons from './nav-icons';
 import styles from '../styles/Home.module.scss';
 
-export default function Layout({ children, sections, fixedNavigation, activeSection, scrollToSection, togglePlayer, showPlayer }) {
+export default function Layout({ children, sections, fixedNavigation, activeSection, scrollToSection, showPlayer, togglePlayer }) {
   return (
     <motion.div
       className={styles.pageContainer}
@@ -18,8 +18,8 @@ export default function Layout({ children, sections, fixedNavigation, activeSect
           sections={sections}
           activeSection={activeSection}
           scrollToSection={scrollToSection}
-          togglePlayer={togglePlayer}
           showPlayer={showPlayer}
+          togglePlayer={togglePlayer}
         />
       </div>
       {children}
