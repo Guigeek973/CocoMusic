@@ -1,0 +1,16 @@
+// Light theme colors
+$light-background: #f0f0f0;
+$light-text: #3E505B;
+$light-primary: #007bff;
+$light-secondary: #6c757d;
+$light-accent: #28a745;
+
+// Dark theme colors
+$dark-background: #1a1a1a;
+$dark-text: white;
+$dark-primary: #4da6ff;
+$dark-secondary: #a9a9a9;
+$dark-accent: #5cb85c;
+
+// Theme toggle variable (you can change this dynamically in your JavaScript)
+$is-dark-theme: true;

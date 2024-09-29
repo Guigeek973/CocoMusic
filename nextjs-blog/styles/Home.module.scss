@@ -1,19 +1,4 @@
-// Light theme colors
-$light-background: #f0f0f0;
-$light-text: #3E505B;
-$light-primary: #007bff;
-$light-secondary: #6c757d;
-$light-accent: #28a745;
-
-// Dark theme colors
-$dark-background: #1a1a1a;
-$dark-text: white;
-$dark-primary: #4da6ff;
-$dark-secondary: #a9a9a9;
-$dark-accent: #5cb85c;
-
-// Theme toggle variable (you can change this dynamically in your JavaScript)
-$is-dark-theme: true;
+@import '../styles/theme.scss';
 
 // Function to get the appropriate color based on the current theme
 @function theme-color($light-color, $dark-color) {
@@ -28,6 +13,72 @@ $is-dark-theme: true;
 // background-color: theme-color($light-background, $dark-background);
 // color: theme-color($light-text, $dark-text);
 
+
+// ------------------------ FIXED NAVIGATION ---------------------------------------
+.fixedNavigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+.fixedNavigation .socialIcons,
+.fixedNavigation .navIcons {
+  position: static;
+  pointer-events: auto;
+}
+
+.whiteIcon {
+  width: 32px;
+  height: 32px;
+  color: theme-color($light-text, $dark-text);
+  font-size: 24px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  pointer-events: auto;
+}
+
+.whiteIcon:hover {
+  transform: scale(1.2);
+}
+
+.iconColumn {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: auto;
+  padding: 0px 15px 0px;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  background-color: rgba(173, 216, 230, 0.2); // Ajout d'une couleur bleutée légère
+}
+
+@media only screen and (max-width: 800px) {
+  .whiteIcon {
+    width: 24px;
+    height: 24px;
+  }
+  .iconColumn {
+      padding: 0px 10px 0px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .iconColumn {
+    padding: 0px 5px 0px;
+  }
+}
+// ------------------------ FIXED NAVIGATION END ---------------------------------------
 
 .main {
   //padding: 0rem 0 5rem;
@@ -101,33 +152,7 @@ $is-dark-theme: true;
   font-weight: 700;
 }
 
-.iconColumn {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 1000;
-  pointer-events: auto;
-  padding: 0px 15px 0px;
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  background-color: rgba(173, 216, 230, 0.2); // Ajout d'une couleur bleutée légère
-}
 
-.whiteIcon {
-  width: 32px;
-  height: 32px;
-  color: theme-color($light-text, $dark-text);
-  font-size: 24px;
-  margin: 20px 0;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  pointer-events: auto;
-}
-
-.whiteIcon:hover {
-  transform: scale(1.2);
-}
 
 .pageContainer {
   position: relative;
@@ -141,26 +166,6 @@ $is-dark-theme: true;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.fixedNavigation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1%;
-  z-index: 1001;
-  pointer-events: none;
-}
-
-.fixedNavigation .socialIcons,
-.fixedNavigation .navIcons {
-  position: static;
-  pointer-events: auto;
 }
 
 .carouselContainer {
@@ -251,19 +256,9 @@ $is-dark-theme: true;
     font-size: 0.8rem;
     padding: 10px;
   }
-  .iconColumn {
-    padding: 0px 10px 0px;
-  }
-  .whiteIcon {
-    width: 24px;
-    height: 24px;
-  }
 }
 
 @media only screen and (max-width: 480px) {
-  .iconColumn {
-    padding: 0px 5px 0px;
-  }
   .videoResponsive {
     width: 70vw !important;
   }
