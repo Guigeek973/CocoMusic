@@ -144,7 +144,7 @@
   backdrop-filter: blur(10px);
   border-radius: 20px;
   background-color: rgba(173, 216, 230, 0.2);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
 .pbio {
@@ -246,13 +246,17 @@
   background-color: rgba(173, 216, 230, 0.2);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
   .contactForm {
     width: 70vw;
   }
   .bioContainer {
     max-width: 70vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .bioContainer {
     font-size: 0.8rem;
     padding: 10px;
   }
@@ -313,8 +317,10 @@
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
-  width: 60vw;
+  width: 70vw;
   margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .videoResponsive iframe {

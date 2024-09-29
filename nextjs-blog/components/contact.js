@@ -23,8 +23,8 @@ export default function ContactSection() {
   return (
     <div className={styles.section}>
       <main className={styles.main}>
-        <h1 className={styles.title}>Contact</h1>
         <form className={styles.contactForm} onSubmit={handleSubmit}>
+          <h1 className={styles.title}>Contact</h1>
           <div className={styles.formGroup}>
             <label htmlFor="name">Nom</label>
             <input
