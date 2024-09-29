@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps, router }) {
         { label: 'Home', href: '#home', ref: homeRef, Component: HomeSection, background: '/images/background-paysage.jpg' },
         { label: 'Bio', href: '#bio', ref: bioRef, Component: BioSection, background: '/images/superadobe-forest.webp' },
         { label: 'Book', href: '#book', ref: bookRef, Component: BookSection, background: '/images/superadobe-fort.webp' },
-        { label: 'Video', href: '#video', ref: videoRef, Component: VideoSection, background: '/images/video-background.jpg' },
+        { label: 'Video', href: '#video', ref: videoRef, Component: VideoSection, background: '/images/piscine.webp' },
         { label: 'Contact', href: '#contact', ref: contactRef, Component: ContactSection, background: '/images/superadobe-drone.webp' },
     ];
 

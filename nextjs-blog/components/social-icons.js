@@ -1,14 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagramSquare, faTwitter, faFacebook, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { faInstagramSquare, faTwitter, faFacebook, faYoutube, faSpotify, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import styles from '../styles/Home.module.scss';
 
 export default function SocialIcons() {
   const socialLinks = [
-    { icon: faInstagramSquare, url: 'https://www.instagram.com/your_instagram' },
-    { icon: faTwitter, url: 'https://twitter.com/your_twitter' },
-    { icon: faFacebook, url: 'https://www.facebook.com/your_facebook' },
-    { icon: faYoutube, url: 'https://www.youtube.com/your_youtube' },
-    { icon: faSpotify, url: 'https://open.spotify.com/artist/your_spotify' },
+    { icon: faInstagramSquare, url: 'https://www.instagram.com/coleen_pl' },
+    //{ icon: faTwitter, url: 'https://twitter.com/your_twitter' },
+    //{ icon: faFacebook, url: 'https://www.facebook.com/your_facebook' },
+    { icon: faTiktok, url: 'https://www.tiktok.com/@cococoleen973' },
+    { icon: faYoutube, url: 'https://www.youtube.com/@coleenmusiqueoff' },
+    { icon: faSpotify, url: 'https://open.spotify.com/intl-fr/artist/4VWJgspjKmKRGfsAqXidTD' },
   ];
 
   return (

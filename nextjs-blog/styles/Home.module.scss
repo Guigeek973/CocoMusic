@@ -7,7 +7,7 @@ $light-accent: #28a745;
 
 // Dark theme colors
 $dark-background: #1a1a1a;
-$dark-text: #FF934F;
+$dark-text: white;
 $dark-primary: #4da6ff;
 $dark-secondary: #a9a9a9;
 $dark-accent: #5cb85c;
@@ -30,7 +30,7 @@ $is-dark-theme: true;
 
 
 .main {
-  padding: 2rem 0 5rem;
+  padding: 0rem 0 5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -87,8 +87,16 @@ $is-dark-theme: true;
   color: theme-color($light-text, $dark-text);
 }
 
-.pbio {
+.bioContainer {
   max-width: 60vw;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  background-color: rgba(173, 216, 230, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pbio {
   color: theme-color($light-text, $dark-text);
   font-weight: 700;
 }
@@ -100,6 +108,10 @@ $is-dark-theme: true;
   justify-content: center;
   z-index: 1000;
   pointer-events: auto;
+  padding: 0px 10px 0px;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  background-color: rgba(173, 216, 230, 0.2); // Ajout d'une couleur bleutée légère
 }
 
 .whiteIcon {
@@ -216,7 +228,7 @@ $is-dark-theme: true;
 }
 
 .videoSection {
-  background-color: theme-color($light-background, $dark-background);
+  //background-color: theme-color($light-background, $dark-background);
   color: theme-color($light-text, $dark-text);
 }
 
@@ -224,15 +236,34 @@ $is-dark-theme: true;
   width: 45vw;
   margin: 0 auto;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border-radius: 10px;
+  border-radius: 20px;
+  background-color: rgba(173, 216, 230, 0.2);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 800px) {
   .contactForm {
     width: 60vw;
+  }
+  .bioContainer {
+    max-width: 70vw;
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  .fixedNavigation {
+    padding: 1%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .iconColumn {
+    padding: 0px 5px 0px;
+  }
+  .whiteIcon {
+    width: 24px;
+    height: 24px;
   }
 }
 

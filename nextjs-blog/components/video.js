@@ -6,7 +6,7 @@ export default function VideoSection() {
     <div className={styles.section}>
       <main className={styles.main}>
         <h1 className={styles.title}>Videos</h1>
-        <YoutubeEmbed embedId="rokGy0huYEA" />
+        <YoutubeEmbed embedId="-JRL5l9Fdco" />
       </main>
     </div>
   );
