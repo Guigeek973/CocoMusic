@@ -2,9 +2,10 @@ import '../styles/global.scss';
 import Layout from '../components/layout';
 import { AnimatePresence } from 'framer-motion';
 import HomeSection from '../components/home';
-import BlogSection from '../components/book';
-import MusicSection from '../components/music';
+import BioSection from '../components/bio';
+import BookSection from '../components/book';
 import ContactSection from '../components/contact';
+import VideoSection from '../components/video';
 import { useRef, useState, useEffect } from 'react';
 
 function MyApp({ Component, pageProps, router }) {
@@ -12,14 +13,16 @@ function MyApp({ Component, pageProps, router }) {
     const [previousSection, setPreviousSection] = useState('Home');
     const [showPlayer, setShowPlayer] = useState(false);
     const homeRef = useRef(null);
-    const blogRef = useRef(null);
-    const musicRef = useRef(null);
+    const bioRef = useRef(null);
+    const bookRef = useRef(null);
     const contactRef = useRef(null);
+    const videoRef = useRef(null);
 
     const sections = [
         { label: 'Home', href: '#home', ref: homeRef, Component: HomeSection, background: '/images/background-paysage.jpg' },
-        { label: 'Blog', href: '#book', ref: blogRef, Component: BlogSection, background: '/images/superadobe-forest.webp' },
-        { label: 'Music', href: '#music', ref: musicRef, Component: MusicSection, background: '/images/superadobe-fort.webp' },
+        { label: 'Bio', href: '#bio', ref: bioRef, Component: BioSection, background: '/images/superadobe-forest.webp' },
+        { label: 'Book', href: '#book', ref: bookRef, Component: BookSection, background: '/images/superadobe-fort.webp' },
+        { label: 'Video', href: '#video', ref: videoRef, Component: VideoSection, background: '/images/video-background.jpg' },
         { label: 'Contact', href: '#contact', ref: contactRef, Component: ContactSection, background: '/images/superadobe-drone.webp' },
     ];
 
@@ -34,10 +37,9 @@ function MyApp({ Component, pageProps, router }) {
         setShowPlayer(!showPlayer);
     };
 
-    useEffect(() => {
-        // Set initial background
-        document.body.style.backgroundImage = `url(${sections[0].background})`;
+    const [currentBackground, setCurrentBackground] = useState(sections[0].background);
 
+    useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             let newActiveSection = activeSection;
@@ -45,7 +47,7 @@ function MyApp({ Component, pageProps, router }) {
             sections.forEach(({ label, ref, background }) => {
                 if (ref.current && scrollPosition >= ref.current.offsetTop - window.innerHeight / 2) {
                     newActiveSection = label;
-                    document.body.style.backgroundImage = `url(${background})`;
+                    setCurrentBackground(background);
                 }
             });
 
@@ -58,6 +60,10 @@ function MyApp({ Component, pageProps, router }) {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [sections, activeSection]);
+
+    useEffect(() => {
+        document.body.style.backgroundImage = `url(${currentBackground})`;
+    }, [currentBackground]);
 
     return (
         <Layout 
@@ -75,6 +81,7 @@ function MyApp({ Component, pageProps, router }) {
                     sections={sections}
                     activeSection={activeSection}
                     previousSection={previousSection}
+                    scrollToSection={scrollToSection}
                     showPlayer={showPlayer}
                     togglePlayer={togglePlayer}
                 />

@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faTwitter, faFacebook, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { faInstagramSquare, faTwitter, faFacebook, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-icons';
 import styles from '../styles/Home.module.scss';
 
 export default function SocialIcons() {
   const socialLinks = [
-    { icon: faInstagram, url: 'https://www.instagram.com/your_instagram' },
+    { icon: faInstagramSquare, url: 'https://www.instagram.com/your_instagram' },
     { icon: faTwitter, url: 'https://twitter.com/your_twitter' },
     { icon: faFacebook, url: 'https://www.facebook.com/your_facebook' },
     { icon: faYoutube, url: 'https://www.youtube.com/your_youtube' },

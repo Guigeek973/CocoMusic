@@ -1,13 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faBook, faMusic, faEnvelope, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faImage, faMusic, faImagePortrait, faVideo, faEnvelope, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import styles from '../styles/Home.module.scss';
 
 const iconMap = {
     Home: faHome,
-    Blog: faBook,
-    Music: faMusic,
+    Bio: faImagePortrait,
+    Book: faImage,
+    Video: faVideo,
     Contact: faEnvelope,
 };
 
@@ -41,7 +42,11 @@ export default function NavIcons({ sections, activeSection, scrollToSection, sho
                     repeat: showPlayer ? Infinity : 0,
                     repeatType: "reverse"
                 }}
-                onClick={togglePlayer}
+                onClick={(e) => {
+                    e.preventDefault(); // Empêche la propagation de l'événement
+                    e.stopPropagation(); // Arrête la propagation de l'événement
+                    togglePlayer(); // Appelle la fonction togglePlayer
+                }}
             >
                 <FontAwesomeIcon
                     icon={faPlay}
