@@ -5,10 +5,10 @@ import styles from '../styles/Home.module.scss';
 export default function SocialIcons() {
   const socialLinks = [
     { icon: faInstagramSquare, url: 'https://www.instagram.com/coleen_pl' },
-    //{ icon: faTwitter, url: 'https://twitter.com/your_twitter' },
-    //{ icon: faFacebook, url: 'https://www.facebook.com/your_facebook' },
+    { icon: faTwitter, url: 'https://twitter.com/ColeenMusique' },
+    { icon: faFacebook, url: 'https://www.facebook.com/ColeenPL' },
     { icon: faTiktok, url: 'https://www.tiktok.com/@cococoleen973' },
-    { icon: faYoutube, url: 'https://www.youtube.com/@coleenmusiqueoff' },
+    { icon: faYoutube, url: 'https://www.youtube.com/@Coleen_PL' },
     { icon: faSpotify, url: 'https://open.spotify.com/intl-fr/artist/4VWJgspjKmKRGfsAqXidTD' },
   ];
 
